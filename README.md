@@ -1,1 +1,1 @@
-# Book-Savour-E-Book
+Book Savour is an online e-book reading platform designed to give book lovers easy access to variety of novels online. The platform allows users to discover, search, and read novels from their computers or mobile devices, making it convenient for them to enjoy their favorite stories wherever they are and whenever they have the opportunity to read.
