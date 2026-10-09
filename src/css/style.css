@@ -2,27 +2,25 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
 
 :root {
-  --primary: #4A2C40;
-  --secondary: #B86B4B;
-  --accent: #D4A853;
+  --primary: #4a2c40;
+  --secondary: #b86b4b;
+  --accent: #d4a853;
 
-  --background: #FAF7F2;
-  --white: #FFFFFF;
+  --background: #faf7f2;
+  --white: #ffffff;
 
   --text: #282525;
-  --text-light: #6B6464;
-  --border: #E6DED5;
+  --text-light: #6b6464;
+  --border: #e6ded5;
 }
-
 
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--text);
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: var(--background);
 }
 
@@ -51,9 +49,9 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
   list-style: none;
-  gap: .5rem;
+  gap: 0.5rem;
   margin-top: 1rem;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 nav.show {
@@ -73,9 +71,11 @@ ul li a {
   transition: color 0.3s ease;
   background-color: rgba(74, 44, 64, 0.2);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
-  transition: color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    box-shadow 0.3s ease;
   line-height: 1.5;
-  padding: .5rem;
+  padding: 0.5rem;
   display: block;
 }
 
@@ -102,7 +102,6 @@ ul li a:hover {
   font-size: 1.5rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 
 input[type="search"] {
   float: right;
@@ -149,7 +148,9 @@ input[type="search"] {
 .book-list {
   display: grid;
   grid-template-columns: 1fr;
-  transition: opacity 300ms ease, transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
 }
 
 .book-list.is-leaving {
@@ -228,7 +229,6 @@ input[type="search"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -260,9 +260,7 @@ footer {
   font-size: 0.9rem;
 }
 
-
 @media only screen and (min-width: 690px) {
-
   nav,
   .search-field-desktop {
     display: block;
@@ -275,7 +273,7 @@ footer {
     border-radius: 4px;
     width: 250%;
     max-width: 300px;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 
   .hamburger,
@@ -287,7 +285,9 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    transition: opacity 300ms ease, transform 300ms ease;
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease;
   }
 
   .bookDisplay {
