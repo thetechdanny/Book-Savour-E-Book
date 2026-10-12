@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Room | Book Savour</title>
+    <meta name="author" content="DANIEL KALU" />
+    <meta name="description"
+        content="Book Savour is an online e-book reading platform designed to give book lovers easy access to variety of novels online. " />
+    <link rel="icon" type="image/x-icon" href="/public/icon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/js/reading.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="headercontent">
+            <div class="logo">
+                <img src="/icon.png" alt="Book Savour Logo" width="50" height="50" />
+                <h1>Book Savour</h1>
+            </div>
+            <form>
+                <div class="search-field-desktop search-field">
+                    <input type="search" placeholder="Search by book or author"
+                        aria-label="Search books by title or author" />
+                </div>
+            </form>
+            <div class="hamburger"></div>
+        </div>
+        <nav class="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/browse/browse.html">Browse</a></li>
+                <li><a href="/best_sellers/best_sellers.html">Bestsellers</a></li>
+                <li><a href="/favourites/favourites.html">Favourites</a></li>
+            </ul>
+        </nav>
+        <form>
+            <div class="search-field search-field-mobile">
+                <input type="search" placeholder="Search by book or author"
+                    aria-label="Search books by title or author" />
+            </div>
+        </form>
+    </header>
+    <main class="bookDisplay">
+        <div id="reading_room"></div>
+    </main>
+    <footer>
+        <div class="mediaLinks">
+            <a href="https://github.com/thetechdanny" target="_blank"><img src="/github.svg" alt="Git Hub Logo"
+                    width="25" height="25" /></a>
+            <a href="https://www.linkedin.com/in/dannyyoung3030" target="_blank"><img src="/linkedin.svg"
+                    alt="LinkedIn Logo" width="25" height="25" /></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dannysamuelyoung@gmail.com" target="_blank"
+                rel="noopener noreferrer"><img src="/envelope-check.svg" alt="Email" width="25" height="25" /></a>
+            <a href="https://www.facebook.com/profile.php?id=100013308646117" target="_blank"><img src="/facebook.svg"
+                    alt="Facebook Logo" width="25" height="25" /></a>
+        </div>
+        <div class="footerText">
+            <p>
+                &copy;<span id="currentYear"></span> ‖ Daniel Kalu -
+                thetechdanny(Github Username) ‖ Nigeria
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
