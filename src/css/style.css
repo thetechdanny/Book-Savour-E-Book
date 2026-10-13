@@ -336,7 +336,6 @@ input[type="search"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -369,7 +368,6 @@ footer {
 }
 
 @media only screen and (min-width: 690px) {
-
   nav,
   .search-field-desktop {
     display: block;

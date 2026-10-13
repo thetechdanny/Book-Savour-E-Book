@@ -3,7 +3,7 @@ import { loadHomepageBooks } from "./books.js";
 import "./search.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadHomepageBooks();
+  loadHomepageBooks();
 });
 
 toggleMenu();

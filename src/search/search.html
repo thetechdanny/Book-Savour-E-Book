@@ -1,56 +1,66 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Books | Book Savour</title>
-    <meta name="description" content="Search books by title or author on Book Savour." />
+    <meta
+      name="description"
+      content="Search books by title or author on Book Savour."
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/js/search.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="headercontent">
-            <div class="logo">
-                <img src="/icon.png" alt="Book Savour Logo" width="50" height="50" />
-                <h1>Book Savour</h1>
-            </div>
-            <form>
-                <div class="search-field-desktop search-field">
-                    <input type="search" placeholder="Search by book or author"
-                        aria-label="Search books by title or author" />
-                </div>
-            </form>
-            <div class="hamburger"></div>
+      <div class="headercontent">
+        <div class="logo">
+          <img src="/icon.png" alt="Book Savour Logo" width="50" height="50" />
+          <h1>Book Savour</h1>
         </div>
-        <nav class="navMenu">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/browse/browse.html">Browse</a></li>
-                <li><a href="/best_sellers/best_sellers.html">Bestsellers</a></li>
-                <li><a href="/favourites/favourites.html">Favourites</a></li>
-            </ul>
-        </nav>
         <form>
-            <div class="search-field search-field-mobile">
-                <input type="search" placeholder="Search by book or author"
-                    aria-label="Search books by title or author" />
-            </div>
+          <div class="search-field-desktop search-field">
+            <input
+              type="search"
+              placeholder="Search by book or author"
+              aria-label="Search books by title or author"
+            />
+          </div>
         </form>
+        <div class="hamburger"></div>
+      </div>
+      <nav class="navMenu">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/browse/browse.html">Browse</a></li>
+          <li><a href="/best_sellers/best_sellers.html">Bestsellers</a></li>
+          <li><a href="/favourites/favourites.html">Favourites</a></li>
+        </ul>
+      </nav>
+      <form>
+        <div class="search-field search-field-mobile">
+          <input
+            type="search"
+            placeholder="Search by book or author"
+            aria-label="Search books by title or author"
+          />
+        </div>
+      </form>
     </header>
     <main class="bookDisplay">
-        <h2 id="search-heading">Search books</h2>
-        <div id="search-books" class="book-list" aria-live="polite">
-            Search for a book title or author's name to see results.
-        </div>
+      <h2 id="search-heading">Search books</h2>
+      <div id="search-books" class="book-list" aria-live="polite">
+        Search for a book title or author's name to see results.
+      </div>
     </main>
     <footer>
-        <div class="footerText">
-            <p>&copy;<span id="currentYear"></span> ‖ Daniel Kalu - thetechdanny (GitHub) ‖ Nigeria</p>
-        </div>
+      <div class="footerText">
+        <p>
+          &copy;<span id="currentYear"></span> ‖ Daniel Kalu - thetechdanny
+          (GitHub) ‖ Nigeria
+        </p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

@@ -1,68 +1,86 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browse Free Books | Book Savour</title>
-    <meta name="description" content="Browse free books available to read on Book Savour." />
+    <meta
+      name="description"
+      content="Browse free books available to read on Book Savour."
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/js/browse.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="headercontent">
-            <div class="logo">
-                <img src="/icon.png" alt="Book Savour Logo" width="50" height="50" />
-                <h1>Book Savour</h1>
-            </div>
-            <form>
-                <div class="search-field-desktop search-field">
-                    <input type="search" placeholder="Search by book or author"
-                        aria-label="Search books by title or author" />
-                </div>
-            </form>
-            <div class="hamburger"></div>
+      <div class="headercontent">
+        <div class="logo">
+          <img src="/icon.png" alt="Book Savour Logo" width="50" height="50" />
+          <h1>Book Savour</h1>
         </div>
-        <nav class="navMenu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="/browse/browse.html">Browse</a></li>
-                <li><a href="/best_sellers/best_sellers.html">Bestsellers</a></li>
-                <li><a href="/favourites/favourites.html">Favourites</a></li>
-            </ul>
-        </nav>
         <form>
-            <div class="search-field search-field-mobile">
-                <input type="search" placeholder="Search by book or author"
-                    aria-label="Search books by title or author" />
-            </div>
+          <div class="search-field-desktop search-field">
+            <input
+              type="search"
+              placeholder="Search by book or author"
+              aria-label="Search books by title or author"
+            />
+          </div>
         </form>
+        <div class="hamburger"></div>
+      </div>
+      <nav class="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/browse/browse.html">Browse</a></li>
+          <li><a href="/best_sellers/best_sellers.html">Bestsellers</a></li>
+          <li><a href="/favourites/favourites.html">Favourites</a></li>
+        </ul>
+      </nav>
+      <form>
+        <div class="search-field search-field-mobile">
+          <input
+            type="search"
+            placeholder="Search by book or author"
+            aria-label="Search books by title or author"
+          />
+        </div>
+      </form>
     </header>
     <main class="bookDisplay">
-        <h2>Free Books</h2>
-        <div id="free-books" class="book-list" aria-live="polite"></div>
-        <button id="load-more-books" class="load-more-books" type="button">Load more books</button>
+      <h2>Free Books</h2>
+      <div id="free-books" class="book-list" aria-live="polite"></div>
+      <button id="load-more-books" class="load-more-books" type="button">
+        Load more books
+      </button>
     </main>
     <footer>
-        <div class="mediaLinks">
-            <a href="https://github.com/thetechdanny" target="_blank"><img src="/github.svg" alt="Git Hub Logo"
-                    width="25" height="25" /></a>
-            <a href="https://www.linkedin.com/in/dannyyoung3030" target="_blank"><img src="/linkedin.svg"
-                    alt="LinkedIn Logo" width="25" height="25" /></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dannysamuelyoung@gmail.com" target="_blank"
-                rel="noopener noreferrer"><img src="/envelope-check.svg" alt="Email" width="25" height="25" /></a>
-            <a href="https://www.facebook.com/profile.php?id=100013308646117" target="_blank"><img src="/facebook.svg"
-                    alt="Facebook Logo" width="25" height="25" /></a>
-        </div>
-        <div class="footerText">
-            <p>
-                &copy;<span id="currentYear"></span> ‖ Daniel Kalu -
-                thetechdanny(Github Username) ‖ Nigeria
-            </p>
-        </div>
+      <div class="mediaLinks">
+        <a href="https://github.com/thetechdanny" target="_blank"
+          ><img src="/github.svg" alt="Git Hub Logo" width="25" height="25"
+        /></a>
+        <a href="https://www.linkedin.com/in/dannyyoung3030" target="_blank"
+          ><img src="/linkedin.svg" alt="LinkedIn Logo" width="25" height="25"
+        /></a>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=dannysamuelyoung@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img src="/envelope-check.svg" alt="Email" width="25" height="25"
+        /></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=100013308646117"
+          target="_blank"
+          ><img src="/facebook.svg" alt="Facebook Logo" width="25" height="25"
+        /></a>
+      </div>
+      <div class="footerText">
+        <p>
+          &copy;<span id="currentYear"></span> ‖ Daniel Kalu -
+          thetechdanny(Github Username) ‖ Nigeria
+        </p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
