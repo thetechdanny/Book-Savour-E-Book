@@ -250,14 +250,12 @@ input[type="search"] {
   color: var(--text-light);
 }
 
-.reader-content {
+.reader-content-frame {
+  display: block;
+  width: 100%;
   min-height: 55vh;
-  padding: 1.5rem;
   background: var(--white);
   border: 1px solid var(--border);
-  line-height: 1.8;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
 }
 
 .reader-controls {

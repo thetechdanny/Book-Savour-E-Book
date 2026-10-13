@@ -16,28 +16,17 @@ function splitIntoPages(text) {
     return pages;
 }
 
-async function fetchBookText(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Book source returned HTTP ${response.status}.`);
-        }
-
-        return response.text();
-    } catch (directError) {
-        const source = new URL(url);
-        if (!source.hostname.endsWith("gutenberg.org")) {
-            throw directError;
-        }
-
-        const relayUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
-        const response = await fetch(relayUrl);
-        if (!response.ok) {
-            throw new Error(`Book text relay returned HTTP ${response.status}.`);
-        }
-
-        return response.text();
-    }
+function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, (character) => {
+        const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+        };
+        return entities[character];
+    });
 }
 
 function renderUnavailableBook(book, message) {
@@ -70,8 +59,10 @@ function renderReader(book, pages, textFile) {
     author.className = "reader-author";
     author.textContent = book.authors?.join(", ") || "Unknown author";
 
-    const content = document.createElement("article");
-    content.className = "reader-content";
+    const content = document.createElement("iframe");
+    content.className = "reader-content-frame";
+    content.title = `${book.title ?? "Book"} page content`;
+    content.setAttribute("sandbox", "");
 
     const controls = document.createElement("div");
     controls.className = "reader-controls";
@@ -94,7 +85,7 @@ function renderReader(book, pages, textFile) {
     downloadLink.textContent = "Download text file";
 
     const updatePage = () => {
-        content.textContent = pages[currentPage];
+        content.srcdoc = `<!doctype html><html lang="en"><head><meta charset="utf-8"><style>body{margin:0;padding:1.5rem;font:1rem/1.8 Georgia,serif;white-space:pre-wrap;overflow-wrap:anywhere;color:#222}</style></head><body>${escapeHtml(pages[currentPage])}</body></html>`;
         pageCount.textContent = `Page ${currentPage + 1} of ${pages.length}`;
         previousButton.disabled = currentPage === 0;
         nextButton.disabled = currentPage === pages.length - 1;
@@ -117,7 +108,7 @@ function renderReader(book, pages, textFile) {
     controls.append(previousButton, pageCount, nextButton);
     readingRoom.replaceChildren(title, author, content, controls, downloadLink);
     updatePage();
-};
+}
 
 async function loadReadingRoom() {
     const storedBook = sessionStorage.getItem("selectedBook");

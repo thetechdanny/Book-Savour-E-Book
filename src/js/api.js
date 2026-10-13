@@ -161,13 +161,18 @@ export async function fetchFreeBookTextFile(book) {
     const cacheKey = new Request(
         `https://book-savour-cache.invalid/text/${encodeURIComponent(`${book.id ?? title}-${title}`)}`,
     );
-    const cache = await caches.open("book-savour-free-text-v1");
-    const cachedResponse = await cache.match(cacheKey);
+    let cache;
+    try {
+        cache = await globalThis.caches?.open("book-savour-free-text-v1");
+        const cachedResponse = await cache?.match(cacheKey);
 
-    if (cachedResponse) {
-        return new File([await cachedResponse.blob()], filename, {
-            type: "text/plain;charset=utf-8",
-        });
+        if (cachedResponse) {
+            return new File([await cachedResponse.blob()], filename, {
+                type: "text/plain;charset=utf-8",
+            });
+        }
+    } catch (error) {
+        console.warn("Book text cache unavailable; fetching from source.", error);
     }
 
     let textUrl = getPlainTextUrl(book);
@@ -190,12 +195,16 @@ export async function fetchFreeBookTextFile(book) {
         throw new Error("The free book source did not contain readable text.");
     }
 
-    await cache.put(
-        cacheKey,
-        new Response(text, {
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-        }),
-    );
+    try {
+        await cache?.put(
+            cacheKey,
+            new Response(text, {
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+            }),
+        );
+    } catch (error) {
+        console.warn("Could not cache book text; continuing with fetched content.", error);
+    }
 
     return new File([text], filename, { type: "text/plain;charset=utf-8" });
 }
