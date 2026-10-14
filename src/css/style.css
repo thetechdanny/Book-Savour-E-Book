@@ -46,12 +46,20 @@ nav {
 }
 
 .navMenu ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-  list-style: none;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
   gap: 0.5rem;
+  list-style: none;
   margin-top: 1rem;
-  padding: 0 0.5rem;
+}
+
+.navMenu li {
+  flex: 1;
+}
+
+.navMenu a {
+  text-align: center;
 }
 
 nav.show {
@@ -104,34 +112,47 @@ ul li a:hover {
 }
 
 input[type="search"] {
-  float: right;
+  min-width: 0;
+  flex: 1;
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: 4px;
-  width: 50%;
-  max-width: 300px;
+  width: 100%;
 }
 
 .search-field {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .search-field-mobile {
-  display: block;
-  margin-bottom: 1rem;
+  display: flex;
+  margin: 1rem 0;
 }
 
 .search-field-desktop {
   display: none;
 }
 
-.search-field::after {
-  content: "\1F50D";
-  position: absolute;
-  top: 1.2rem;
-  right: 0.75rem;
-  transform: translateY(-50%);
-  pointer-events: none;
+.search-submit {
+  flex: 0 0 auto;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.search-submit:hover {
+  color: var(--secondary);
+}
+
+.search-submit:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
 }
 
 /* Main styling */
@@ -368,19 +389,17 @@ footer {
 }
 
 @media only screen and (min-width: 690px) {
-  nav,
-  .search-field-desktop {
-    display: block;
+  .navMenu {
+    width: 100%;
   }
 
-  .search-field-desktop input[type="search"] {
-    float: right;
-    padding: 0.8rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    width: 250%;
-    max-width: 300px;
-    margin-top: 0.5rem;
+  nav,
+  .search-field-desktop {
+    display: flex;
+  }
+
+  .headercontent > form {
+    flex: 0 1 24rem;
   }
 
   .hamburger,

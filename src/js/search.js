@@ -63,6 +63,17 @@ export function initBookSearch() {
     const form = input.closest("form");
     if (!form) continue;
 
+    const searchField = input.closest(".search-field");
+    if (searchField && !searchField.querySelector(".search-submit")) {
+      const submitButton = document.createElement("button");
+      submitButton.className = "search-submit";
+      submitButton.type = "submit";
+      submitButton.setAttribute("aria-label", "Search books");
+      submitButton.title = "Search books";
+      submitButton.textContent = "Search";
+      searchField.append(submitButton);
+    }
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const query = input.value.trim();
